@@ -1,7 +1,9 @@
 syntax="proto3";
 option java_package = "me.grpc.stubs";
 import "google/protobuf/empty.proto";
-service BanqueService {
+
+service BankService {
+
   // unary model
   rpc convert(ConvertCurrencyRequest) returns(ConvertCurrencyResponse);
   rpc getAccount(GetAccountRequest) returns(GetAccountResponse);

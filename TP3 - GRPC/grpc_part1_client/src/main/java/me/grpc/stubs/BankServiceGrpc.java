@@ -19,38 +19,38 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
-    comments = "Source: ebank.proto")
-public final class BanqueServiceGrpc {
+    comments = "Source: bank.proto")
+public final class BankServiceGrpc {
 
-  private BanqueServiceGrpc() {}
+  private BankServiceGrpc() {}
 
   public static final String SERVICE_NAME = "BanqueService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-      me.grpc.stubs.Ebank.ConvertCurrencyResponse> getConvertMethod;
+  private static volatile io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest,
+      me.grpc.stubs.Bank.ConvertCurrencyResponse> getConvertMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "convert",
-      requestType = me.grpc.stubs.Ebank.ConvertCurrencyRequest.class,
-      responseType = me.grpc.stubs.Ebank.ConvertCurrencyResponse.class,
+      requestType = me.grpc.stubs.Bank.ConvertCurrencyRequest.class,
+      responseType = me.grpc.stubs.Bank.ConvertCurrencyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-      me.grpc.stubs.Ebank.ConvertCurrencyResponse> getConvertMethod() {
-    io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest, me.grpc.stubs.Ebank.ConvertCurrencyResponse> getConvertMethod;
-    if ((getConvertMethod = BanqueServiceGrpc.getConvertMethod) == null) {
-      synchronized (BanqueServiceGrpc.class) {
-        if ((getConvertMethod = BanqueServiceGrpc.getConvertMethod) == null) {
-          BanqueServiceGrpc.getConvertMethod = getConvertMethod = 
-              io.grpc.MethodDescriptor.<me.grpc.stubs.Ebank.ConvertCurrencyRequest, me.grpc.stubs.Ebank.ConvertCurrencyResponse>newBuilder()
+  public static io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest,
+      me.grpc.stubs.Bank.ConvertCurrencyResponse> getConvertMethod() {
+    io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest, me.grpc.stubs.Bank.ConvertCurrencyResponse> getConvertMethod;
+    if ((getConvertMethod = BankServiceGrpc.getConvertMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getConvertMethod = BankServiceGrpc.getConvertMethod) == null) {
+          BankServiceGrpc.getConvertMethod = getConvertMethod = 
+              io.grpc.MethodDescriptor.<me.grpc.stubs.Bank.ConvertCurrencyRequest, me.grpc.stubs.Bank.ConvertCurrencyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "BanqueService", "convert"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  me.grpc.stubs.Ebank.ConvertCurrencyRequest.getDefaultInstance()))
+                  me.grpc.stubs.Bank.ConvertCurrencyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  me.grpc.stubs.Ebank.ConvertCurrencyResponse.getDefaultInstance()))
+                  me.grpc.stubs.Bank.ConvertCurrencyResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new BanqueServiceMethodDescriptorSupplier("convert"))
                   .build();
           }
@@ -59,30 +59,30 @@ public final class BanqueServiceGrpc {
      return getConvertMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-      me.grpc.stubs.Ebank.ConvertCurrencyResponse> getGetCurrencyStreamMethod;
+  private static volatile io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest,
+      me.grpc.stubs.Bank.ConvertCurrencyResponse> getGetCurrencyStreamMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getCurrencyStream",
-      requestType = me.grpc.stubs.Ebank.ConvertCurrencyRequest.class,
-      responseType = me.grpc.stubs.Ebank.ConvertCurrencyResponse.class,
+      requestType = me.grpc.stubs.Bank.ConvertCurrencyRequest.class,
+      responseType = me.grpc.stubs.Bank.ConvertCurrencyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-      me.grpc.stubs.Ebank.ConvertCurrencyResponse> getGetCurrencyStreamMethod() {
-    io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest, me.grpc.stubs.Ebank.ConvertCurrencyResponse> getGetCurrencyStreamMethod;
-    if ((getGetCurrencyStreamMethod = BanqueServiceGrpc.getGetCurrencyStreamMethod) == null) {
-      synchronized (BanqueServiceGrpc.class) {
-        if ((getGetCurrencyStreamMethod = BanqueServiceGrpc.getGetCurrencyStreamMethod) == null) {
-          BanqueServiceGrpc.getGetCurrencyStreamMethod = getGetCurrencyStreamMethod = 
-              io.grpc.MethodDescriptor.<me.grpc.stubs.Ebank.ConvertCurrencyRequest, me.grpc.stubs.Ebank.ConvertCurrencyResponse>newBuilder()
+  public static io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest,
+      me.grpc.stubs.Bank.ConvertCurrencyResponse> getGetCurrencyStreamMethod() {
+    io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest, me.grpc.stubs.Bank.ConvertCurrencyResponse> getGetCurrencyStreamMethod;
+    if ((getGetCurrencyStreamMethod = BankServiceGrpc.getGetCurrencyStreamMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getGetCurrencyStreamMethod = BankServiceGrpc.getGetCurrencyStreamMethod) == null) {
+          BankServiceGrpc.getGetCurrencyStreamMethod = getGetCurrencyStreamMethod = 
+              io.grpc.MethodDescriptor.<me.grpc.stubs.Bank.ConvertCurrencyRequest, me.grpc.stubs.Bank.ConvertCurrencyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "BanqueService", "getCurrencyStream"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  me.grpc.stubs.Ebank.ConvertCurrencyRequest.getDefaultInstance()))
+                  me.grpc.stubs.Bank.ConvertCurrencyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  me.grpc.stubs.Ebank.ConvertCurrencyResponse.getDefaultInstance()))
+                  me.grpc.stubs.Bank.ConvertCurrencyResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new BanqueServiceMethodDescriptorSupplier("getCurrencyStream"))
                   .build();
           }
@@ -91,30 +91,30 @@ public final class BanqueServiceGrpc {
      return getGetCurrencyStreamMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-      me.grpc.stubs.Ebank.ConvertCurrencyResponse> getPerformStreamMethod;
+  private static volatile io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest,
+      me.grpc.stubs.Bank.ConvertCurrencyResponse> getPerformStreamMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "performStream",
-      requestType = me.grpc.stubs.Ebank.ConvertCurrencyRequest.class,
-      responseType = me.grpc.stubs.Ebank.ConvertCurrencyResponse.class,
+      requestType = me.grpc.stubs.Bank.ConvertCurrencyRequest.class,
+      responseType = me.grpc.stubs.Bank.ConvertCurrencyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-      me.grpc.stubs.Ebank.ConvertCurrencyResponse> getPerformStreamMethod() {
-    io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest, me.grpc.stubs.Ebank.ConvertCurrencyResponse> getPerformStreamMethod;
-    if ((getPerformStreamMethod = BanqueServiceGrpc.getPerformStreamMethod) == null) {
-      synchronized (BanqueServiceGrpc.class) {
-        if ((getPerformStreamMethod = BanqueServiceGrpc.getPerformStreamMethod) == null) {
-          BanqueServiceGrpc.getPerformStreamMethod = getPerformStreamMethod = 
-              io.grpc.MethodDescriptor.<me.grpc.stubs.Ebank.ConvertCurrencyRequest, me.grpc.stubs.Ebank.ConvertCurrencyResponse>newBuilder()
+  public static io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest,
+      me.grpc.stubs.Bank.ConvertCurrencyResponse> getPerformStreamMethod() {
+    io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest, me.grpc.stubs.Bank.ConvertCurrencyResponse> getPerformStreamMethod;
+    if ((getPerformStreamMethod = BankServiceGrpc.getPerformStreamMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getPerformStreamMethod = BankServiceGrpc.getPerformStreamMethod) == null) {
+          BankServiceGrpc.getPerformStreamMethod = getPerformStreamMethod = 
+              io.grpc.MethodDescriptor.<me.grpc.stubs.Bank.ConvertCurrencyRequest, me.grpc.stubs.Bank.ConvertCurrencyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "BanqueService", "performStream"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  me.grpc.stubs.Ebank.ConvertCurrencyRequest.getDefaultInstance()))
+                  me.grpc.stubs.Bank.ConvertCurrencyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  me.grpc.stubs.Ebank.ConvertCurrencyResponse.getDefaultInstance()))
+                  me.grpc.stubs.Bank.ConvertCurrencyResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new BanqueServiceMethodDescriptorSupplier("performStream"))
                   .build();
           }
@@ -123,30 +123,30 @@ public final class BanqueServiceGrpc {
      return getPerformStreamMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-      me.grpc.stubs.Ebank.ConvertCurrencyResponse> getFullStreamMethod;
+  private static volatile io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest,
+      me.grpc.stubs.Bank.ConvertCurrencyResponse> getFullStreamMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "fullStream",
-      requestType = me.grpc.stubs.Ebank.ConvertCurrencyRequest.class,
-      responseType = me.grpc.stubs.Ebank.ConvertCurrencyResponse.class,
+      requestType = me.grpc.stubs.Bank.ConvertCurrencyRequest.class,
+      responseType = me.grpc.stubs.Bank.ConvertCurrencyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-      me.grpc.stubs.Ebank.ConvertCurrencyResponse> getFullStreamMethod() {
-    io.grpc.MethodDescriptor<me.grpc.stubs.Ebank.ConvertCurrencyRequest, me.grpc.stubs.Ebank.ConvertCurrencyResponse> getFullStreamMethod;
-    if ((getFullStreamMethod = BanqueServiceGrpc.getFullStreamMethod) == null) {
-      synchronized (BanqueServiceGrpc.class) {
-        if ((getFullStreamMethod = BanqueServiceGrpc.getFullStreamMethod) == null) {
-          BanqueServiceGrpc.getFullStreamMethod = getFullStreamMethod = 
-              io.grpc.MethodDescriptor.<me.grpc.stubs.Ebank.ConvertCurrencyRequest, me.grpc.stubs.Ebank.ConvertCurrencyResponse>newBuilder()
+  public static io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest,
+      me.grpc.stubs.Bank.ConvertCurrencyResponse> getFullStreamMethod() {
+    io.grpc.MethodDescriptor<me.grpc.stubs.Bank.ConvertCurrencyRequest, me.grpc.stubs.Bank.ConvertCurrencyResponse> getFullStreamMethod;
+    if ((getFullStreamMethod = BankServiceGrpc.getFullStreamMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getFullStreamMethod = BankServiceGrpc.getFullStreamMethod) == null) {
+          BankServiceGrpc.getFullStreamMethod = getFullStreamMethod = 
+              io.grpc.MethodDescriptor.<me.grpc.stubs.Bank.ConvertCurrencyRequest, me.grpc.stubs.Bank.ConvertCurrencyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "BanqueService", "fullStream"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  me.grpc.stubs.Ebank.ConvertCurrencyRequest.getDefaultInstance()))
+                  me.grpc.stubs.Bank.ConvertCurrencyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  me.grpc.stubs.Ebank.ConvertCurrencyResponse.getDefaultInstance()))
+                  me.grpc.stubs.Bank.ConvertCurrencyResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new BanqueServiceMethodDescriptorSupplier("fullStream"))
                   .build();
           }
@@ -187,8 +187,8 @@ public final class BanqueServiceGrpc {
      * unary model
      * </pre>
      */
-    public void convert(me.grpc.stubs.Ebank.ConvertCurrencyRequest request,
-        io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse> responseObserver) {
+    public void convert(me.grpc.stubs.Bank.ConvertCurrencyRequest request,
+        io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getConvertMethod(), responseObserver);
     }
 
@@ -197,8 +197,8 @@ public final class BanqueServiceGrpc {
      * Server Streaming model
      * </pre>
      */
-    public void getCurrencyStream(me.grpc.stubs.Ebank.ConvertCurrencyRequest request,
-        io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse> responseObserver) {
+    public void getCurrencyStream(me.grpc.stubs.Bank.ConvertCurrencyRequest request,
+        io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetCurrencyStreamMethod(), responseObserver);
     }
 
@@ -207,8 +207,8 @@ public final class BanqueServiceGrpc {
      * client Streaming model
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyRequest> performStream(
-        io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyRequest> performStream(
+        io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getPerformStreamMethod(), responseObserver);
     }
 
@@ -217,8 +217,8 @@ public final class BanqueServiceGrpc {
      * Bidirectionnal Streaming model
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyRequest> fullStream(
-        io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyRequest> fullStream(
+        io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getFullStreamMethod(), responseObserver);
     }
 
@@ -228,29 +228,29 @@ public final class BanqueServiceGrpc {
             getConvertMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-                me.grpc.stubs.Ebank.ConvertCurrencyResponse>(
+                me.grpc.stubs.Bank.ConvertCurrencyRequest,
+                me.grpc.stubs.Bank.ConvertCurrencyResponse>(
                   this, METHODID_CONVERT)))
           .addMethod(
             getGetCurrencyStreamMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-                me.grpc.stubs.Ebank.ConvertCurrencyResponse>(
+                me.grpc.stubs.Bank.ConvertCurrencyRequest,
+                me.grpc.stubs.Bank.ConvertCurrencyResponse>(
                   this, METHODID_GET_CURRENCY_STREAM)))
           .addMethod(
             getPerformStreamMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
-                me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-                me.grpc.stubs.Ebank.ConvertCurrencyResponse>(
+                me.grpc.stubs.Bank.ConvertCurrencyRequest,
+                me.grpc.stubs.Bank.ConvertCurrencyResponse>(
                   this, METHODID_PERFORM_STREAM)))
           .addMethod(
             getFullStreamMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                me.grpc.stubs.Ebank.ConvertCurrencyRequest,
-                me.grpc.stubs.Ebank.ConvertCurrencyResponse>(
+                me.grpc.stubs.Bank.ConvertCurrencyRequest,
+                me.grpc.stubs.Bank.ConvertCurrencyResponse>(
                   this, METHODID_FULL_STREAM)))
           .build();
     }
@@ -279,8 +279,8 @@ public final class BanqueServiceGrpc {
      * unary model
      * </pre>
      */
-    public void convert(me.grpc.stubs.Ebank.ConvertCurrencyRequest request,
-        io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse> responseObserver) {
+    public void convert(me.grpc.stubs.Bank.ConvertCurrencyRequest request,
+        io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getConvertMethod(), getCallOptions()), request, responseObserver);
     }
@@ -290,8 +290,8 @@ public final class BanqueServiceGrpc {
      * Server Streaming model
      * </pre>
      */
-    public void getCurrencyStream(me.grpc.stubs.Ebank.ConvertCurrencyRequest request,
-        io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse> responseObserver) {
+    public void getCurrencyStream(me.grpc.stubs.Bank.ConvertCurrencyRequest request,
+        io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getGetCurrencyStreamMethod(), getCallOptions()), request, responseObserver);
     }
@@ -301,8 +301,8 @@ public final class BanqueServiceGrpc {
      * client Streaming model
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyRequest> performStream(
-        io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyRequest> performStream(
+        io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse> responseObserver) {
       return asyncClientStreamingCall(
           getChannel().newCall(getPerformStreamMethod(), getCallOptions()), responseObserver);
     }
@@ -312,8 +312,8 @@ public final class BanqueServiceGrpc {
      * Bidirectionnal Streaming model
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyRequest> fullStream(
-        io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse> responseObserver) {
+    public io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyRequest> fullStream(
+        io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getFullStreamMethod(), getCallOptions()), responseObserver);
     }
@@ -342,7 +342,7 @@ public final class BanqueServiceGrpc {
      * unary model
      * </pre>
      */
-    public me.grpc.stubs.Ebank.ConvertCurrencyResponse convert(me.grpc.stubs.Ebank.ConvertCurrencyRequest request) {
+    public me.grpc.stubs.Bank.ConvertCurrencyResponse convert(me.grpc.stubs.Bank.ConvertCurrencyRequest request) {
       return blockingUnaryCall(
           getChannel(), getConvertMethod(), getCallOptions(), request);
     }
@@ -352,8 +352,8 @@ public final class BanqueServiceGrpc {
      * Server Streaming model
      * </pre>
      */
-    public java.util.Iterator<me.grpc.stubs.Ebank.ConvertCurrencyResponse> getCurrencyStream(
-        me.grpc.stubs.Ebank.ConvertCurrencyRequest request) {
+    public java.util.Iterator<me.grpc.stubs.Bank.ConvertCurrencyResponse> getCurrencyStream(
+        me.grpc.stubs.Bank.ConvertCurrencyRequest request) {
       return blockingServerStreamingCall(
           getChannel(), getGetCurrencyStreamMethod(), getCallOptions(), request);
     }
@@ -382,8 +382,8 @@ public final class BanqueServiceGrpc {
      * unary model
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<me.grpc.stubs.Ebank.ConvertCurrencyResponse> convert(
-        me.grpc.stubs.Ebank.ConvertCurrencyRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<me.grpc.stubs.Bank.ConvertCurrencyResponse> convert(
+        me.grpc.stubs.Bank.ConvertCurrencyRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getConvertMethod(), getCallOptions()), request);
     }
@@ -412,12 +412,12 @@ public final class BanqueServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CONVERT:
-          serviceImpl.convert((me.grpc.stubs.Ebank.ConvertCurrencyRequest) request,
-              (io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse>) responseObserver);
+          serviceImpl.convert((me.grpc.stubs.Bank.ConvertCurrencyRequest) request,
+              (io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse>) responseObserver);
           break;
         case METHODID_GET_CURRENCY_STREAM:
-          serviceImpl.getCurrencyStream((me.grpc.stubs.Ebank.ConvertCurrencyRequest) request,
-              (io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse>) responseObserver);
+          serviceImpl.getCurrencyStream((me.grpc.stubs.Bank.ConvertCurrencyRequest) request,
+              (io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -431,10 +431,10 @@ public final class BanqueServiceGrpc {
       switch (methodId) {
         case METHODID_PERFORM_STREAM:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.performStream(
-              (io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse>) responseObserver);
         case METHODID_FULL_STREAM:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.fullStream(
-              (io.grpc.stub.StreamObserver<me.grpc.stubs.Ebank.ConvertCurrencyResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<me.grpc.stubs.Bank.ConvertCurrencyResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -447,7 +447,7 @@ public final class BanqueServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return me.grpc.stubs.Ebank.getDescriptor();
+      return me.grpc.stubs.Bank.getDescriptor();
     }
 
     @java.lang.Override
@@ -481,7 +481,7 @@ public final class BanqueServiceGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (BanqueServiceGrpc.class) {
+      synchronized (BankServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)

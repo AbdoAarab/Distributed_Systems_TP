@@ -1,6 +1,7 @@
 syntax="proto3";
 option java_package = "me.grpc.stubs";
-service BanqueService {
+
+service BankService {
   rpc convert(ConvertCurrencyRequest) returns(ConvertCurrencyResponse); // unary model
   rpc getCurrencyStream(ConvertCurrencyRequest) returns(stream ConvertCurrencyResponse); // Server Streaming model
   rpc performStream(stream ConvertCurrencyRequest) returns(ConvertCurrencyResponse); // client Streaming model

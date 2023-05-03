@@ -1,22 +1,22 @@
 package me.grpc.services;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
-import me.grpc.stubs.BanqueServiceGrpc;
-import me.grpc.stubs.Ebank;
+import me.grpc.stubs.BankServiceGrpc;
+import me.grpc.stubs.Bank;
 
 import java.util.*;
 
 
-public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  {
-    private List<StreamObserver<Ebank.AccountTransaction>> globalResponseObservers=new ArrayList<>();
+public class BankGrpcService extends BankServiceGrpc.BankServiceImplBase  {
+    private List<StreamObserver<Bank.AccountTransaction>> globalResponseObservers=new ArrayList<>();
 
     @Override
-    public void convert(Ebank.ConvertCurrencyRequest request, StreamObserver<Ebank.ConvertCurrencyResponse> responseObserver) {
+    public void convert(Bank.ConvertCurrencyRequest request, StreamObserver<Bank.ConvertCurrencyResponse> responseObserver) {
         double amount = request.getAmount();
         String currencyFrom = request.getCurrencyFrom();
         String currencyTo = request.getCurrencyTo();
         double result = 0;
-        Ebank.ConvertCurrencyResponse response = Ebank.ConvertCurrencyResponse.newBuilder()
+        Bank.ConvertCurrencyResponse response = Bank.ConvertCurrencyResponse.newBuilder()
                 .setCurrencyFrom(currencyFrom)
                 .setCurrencyTo(currencyTo)
                 .setAmount(amount)
@@ -27,17 +27,17 @@ public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  
     }
 
     @Override
-    public void getAccount(Ebank.GetAccountRequest request, StreamObserver<Ebank.GetAccountResponse> responseObserver) {
+    public void getAccount(Bank.GetAccountRequest request, StreamObserver<Bank.GetAccountResponse> responseObserver) {
         String accountId = request.getId();
-        Ebank.Account account = Ebank.Account.newBuilder()
+        Bank.Account account = Bank.Account.newBuilder()
                 .setAccountId(accountId)
                 .setBalance(Math.random()*1000)
                 .setCreatedAt(System.currentTimeMillis())
                 .setCurrency("MAD")
-                .setType(Ebank.AccountType.CURRENT_ACCOUNT)
-                .setStatus(Ebank.AccountStatus.ACCOUNT_STATUS_ACTIVATED)
+                .setType(Bank.AccountType.CURRENT_ACCOUNT)
+                .setStatus(Bank.AccountStatus.ACCOUNT_STATUS_ACTIVATED)
                 .build();
-        Ebank.GetAccountResponse response = Ebank.GetAccountResponse.newBuilder()
+        Bank.GetAccountResponse response = Bank.GetAccountResponse.newBuilder()
                 .setAccount(account)
                 .build();
         responseObserver.onNext(response);
@@ -45,16 +45,16 @@ public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  
     }
 
     @Override
-    public void getListAccount(Ebank.GetListAccountsRequest request, StreamObserver<Ebank.GetListAccountsResponse> responseObserver) {
-        Ebank.GetListAccountsResponse.Builder listAccountsBuilder = Ebank.GetListAccountsResponse.newBuilder();
+    public void getListAccount(Bank.GetListAccountsRequest request, StreamObserver<Bank.GetListAccountsResponse> responseObserver) {
+        Bank.GetListAccountsResponse.Builder listAccountsBuilder = Bank.GetListAccountsResponse.newBuilder();
         for (int i = 0; i < 5; i++) {
-            Ebank.Account account= Ebank.Account.newBuilder()
+            Bank.Account account= Bank.Account.newBuilder()
                     .setAccountId(UUID.randomUUID().toString())
                     .setBalance(Math.random()*90000)
                     .setCreatedAt(System.currentTimeMillis())
                     .setCurrency("MAD")
-                    .setType(Ebank.AccountType.CURRENT_ACCOUNT)
-                    .setStatus(Ebank.AccountStatus.ACCOUNT_STATUS_ACTIVATED)
+                    .setType(Bank.AccountType.CURRENT_ACCOUNT)
+                    .setStatus(Bank.AccountStatus.ACCOUNT_STATUS_ACTIVATED)
                     .build();
             listAccountsBuilder.addAccounts(account);
         }
@@ -63,7 +63,7 @@ public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  
     }
 
     @Override
-    public void getStreamOfAccountTransactions(Ebank.GetStreamOfAccountTransactionRequest request, StreamObserver<Ebank.AccountTransaction> responseObserver) {
+    public void getStreamOfAccountTransactions(Bank.GetStreamOfAccountTransactionRequest request, StreamObserver<Bank.AccountTransaction> responseObserver) {
         this.globalResponseObservers.add(responseObserver);
         Timer timer=new Timer("Transactions Timer");
 
@@ -72,11 +72,11 @@ public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  
             private int counter=0;
             @Override
             public void run() {
-                Ebank.AccountTransaction accountTransaction=Ebank.AccountTransaction.newBuilder()
+                Bank.AccountTransaction accountTransaction=Bank.AccountTransaction.newBuilder()
                         .setAccountId(request.getAccountId())
                         .setAmount(1000+Math.random()*9000)
                         .setTransactionDate(System.currentTimeMillis())
-                        .setType(Math.random()>0.5?Ebank.TransactionType.CREDIT: Ebank.TransactionType.DEBIT)
+                        .setType(Math.random()>0.5?Bank.TransactionType.CREDIT: Bank.TransactionType.DEBIT)
                         .build();
                 responseObserver.onNext(accountTransaction);
                 ++counter;
@@ -89,16 +89,16 @@ public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  
  }
 
     @Override
-    public StreamObserver<Ebank.AccountTransaction> submitStreamOfTransaction(StreamObserver<Ebank.PerformStreamOfTransactionsResponse> responseObserver) {
-        List<Ebank.AccountTransaction> performedTransactions=new ArrayList<>();
-        Ebank.PerformStreamOfTransactionsResponse response=Ebank.PerformStreamOfTransactionsResponse.getDefaultInstance();
-        return new StreamObserver<Ebank.AccountTransaction>() {
+    public StreamObserver<Bank.AccountTransaction> submitStreamOfTransaction(StreamObserver<Bank.PerformStreamOfTransactionsResponse> responseObserver) {
+        List<Bank.AccountTransaction> performedTransactions=new ArrayList<>();
+        Bank.PerformStreamOfTransactionsResponse response=Bank.PerformStreamOfTransactionsResponse.getDefaultInstance();
+        return new StreamObserver<Bank.AccountTransaction>() {
             @Override
-            public void onNext(Ebank.AccountTransaction accountTransaction) {
-                Ebank.AccountTransaction performedTransaction;
+            public void onNext(Bank.AccountTransaction accountTransaction) {
+                Bank.AccountTransaction performedTransaction;
                 if(accountTransaction.getAmount()>100){
-                    performedTransaction=Ebank.AccountTransaction.newBuilder(accountTransaction)
-                            .setStatus(Ebank.TransactionStatus.EXECUTED).build();
+                    performedTransaction=Bank.AccountTransaction.newBuilder(accountTransaction)
+                            .setStatus(Bank.TransactionStatus.EXECUTED).build();
                     performedTransactions.add(performedTransaction);
                 }
             }
@@ -112,17 +112,17 @@ public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  
                 double totalAmountOfPerformedTransactions= 0;
                 double totalAmountOfPerformedDebitTransactions=0;
                 double totalAmountOfPerformedCreditTransactions=0;
-                for (Ebank.AccountTransaction tx:performedTransactions){
+                for (Bank.AccountTransaction tx:performedTransactions){
                     totalAmountOfPerformedTransactions+=tx.getAmount();
-                    if(tx.getType().equals(Ebank.TransactionType.CREDIT)){
+                    if(tx.getType().equals(Bank.TransactionType.CREDIT)){
                         totalAmountOfPerformedCreditTransactions+=tx.getAmount();
                     } else {
                         totalAmountOfPerformedDebitTransactions+=tx.getAmount();
                     }
                 }
                 numberOfPerformedTransactions=performedTransactions.size();
-                Ebank.PerformStreamOfTransactionsResponse performStreamOfTransactionsResponse =
-                        Ebank.PerformStreamOfTransactionsResponse.newBuilder()
+                Bank.PerformStreamOfTransactionsResponse performStreamOfTransactionsResponse =
+                        Bank.PerformStreamOfTransactionsResponse.newBuilder()
                                 .setNumberOfPerformedTransactions(numberOfPerformedTransactions)
                                 .setTotalAmountOfPerformedCreditTransactions(totalAmountOfPerformedCreditTransactions)
                                 .setTotalAmountOfPerformedDebitTransactions(totalAmountOfPerformedDebitTransactions)
@@ -135,13 +135,13 @@ public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  
     }
 
     @Override
-    public StreamObserver<Ebank.AccountTransaction> executeStreamOfTransaction(StreamObserver<Ebank.AccountTransaction> responseObserver) {
-        return new StreamObserver<Ebank.AccountTransaction>() {
+    public StreamObserver<Bank.AccountTransaction> executeStreamOfTransaction(StreamObserver<Bank.AccountTransaction> responseObserver) {
+        return new StreamObserver<Bank.AccountTransaction>() {
             @Override
-            public void onNext(Ebank.AccountTransaction accountTransaction) {
+            public void onNext(Bank.AccountTransaction accountTransaction) {
                 if(accountTransaction.getAmount()>100){
-                    Ebank.AccountTransaction performedTransaction = Ebank.AccountTransaction.newBuilder(accountTransaction)
-                            .setStatus(Ebank.TransactionStatus.EXECUTED)
+                    Bank.AccountTransaction performedTransaction = Bank.AccountTransaction.newBuilder(accountTransaction)
+                            .setStatus(Bank.TransactionStatus.EXECUTED)
                             .build();
                     responseObserver.onNext(performedTransaction);
                 } else throw new RuntimeException("The transaction "+accountTransaction.getTransactionId()+" is rejected");
@@ -158,7 +158,7 @@ public class BanqueGrpcService extends BanqueServiceGrpc.BanqueServiceImplBase  
     }
 
     @Override
-    public void submitTransaction(Ebank.AccountTransaction request, StreamObserver<Empty> responseObserver) {
+    public void submitTransaction(Bank.AccountTransaction request, StreamObserver<Empty> responseObserver) {
         this.globalResponseObservers.forEach(obs->{
             obs.onNext(request);
         });
