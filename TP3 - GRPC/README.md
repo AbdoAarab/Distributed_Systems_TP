@@ -3,12 +3,10 @@
 
 ## Part 1
 
-* Using BloomRPC :  
-
 * covert currency method:
     ![test1](Previews/convert.jpg)  
 * getAccount method:
-    ![test2](Previews/getaaccount.jpg)
+    ![test2](Previews/getaacount.jpg)
 * getListAccount method:
     ![test3](Previews/getlistaccount.jpg)
 * getStreamOfAccountTransactions method:
